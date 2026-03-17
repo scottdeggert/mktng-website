@@ -175,12 +175,11 @@ header.is-scrolled {
 
 .estb {
   font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.14em;
-  color: var(--near-black);
-  opacity: 0.35;
+  color: var(--cyan);
+  opacity: 1;
   margin-bottom: 1.5rem;
 }
 
@@ -652,15 +651,15 @@ header.is-scrolled {
 
 /* ─── 9. GOLDENDOODLE ───────────────────────────────────────── */
 .goldendoodle {
-  background: var(--white);
+  background: var(--gd);
   padding: 0 0 5rem;
-  border-top: 3px solid var(--gd);
+  border-top: none;
 }
 
 .gd-badge {
   display: inline-block;
-  border: 1px solid var(--gd);
-  color: var(--gd);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--white);
   padding: 0.3rem 0.8rem;
   font-family: var(--font-body);
   font-size: 0.68rem;
@@ -681,19 +680,20 @@ header.is-scrolled {
 
 .gd-story h2 {
   font-size: clamp(2rem, 3.2vw, 2.75rem);
-  color: var(--gd);
+  color: var(--white);
   margin-bottom: 1rem;
 }
 
 .gd-story p {
   font-size: 1.05rem;
-  opacity: 0.88;
+  opacity: 0.9;
+  color: var(--white);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .gd-panel {
-  background: var(--ice);
+  background: var(--white);
   border: 1px solid var(--border-light);
   padding: 2.5rem;
 }
@@ -713,6 +713,17 @@ header.is-scrolled {
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--near-black);
+}
+
+/* GoldenDoodle CTA button on teal background */
+.goldendoodle .btn-outline.gd-btn {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.goldendoodle .btn-outline.gd-btn:hover {
+  background: var(--white);
+  color: var(--gd);
 }
 
 /* ─── 10. INSIGHTS ──────────────────────────────────────────── */
