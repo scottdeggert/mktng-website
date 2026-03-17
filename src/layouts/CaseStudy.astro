@@ -1,0 +1,185 @@
+---
+import '../styles/global.css';
+import Slideshow from '../components/Slideshow.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{frontmatter.seoTitle || frontmatter.title} | MKTNG.</title>
+    {frontmatter.seoDescription && (
+      <meta name="description" content={frontmatter.seoDescription} />
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="container nav-inner">
+        <a href="/" class="logo" aria-label="MKTNG.">
+          <img src="/mktng-logo.png" alt="MKTNG." class="logo-img" />
+        </a>
+        <nav class="nav-links">
+          <a href="/#work">Work</a>
+          <a href="/#how-we-work">How We Work</a>
+          <a href="/#about">About</a>
+          <a href="/blog">Blog</a>
+          <a href="/goldendoodle" class="gd-link">GoldenDoodle</a>
+          <a href="/contact" class="btn btn-berry">Let's Talk</a>
+        </nav>
+      </div>
+    </header>
+
+    <article class="case-study">
+      <div class="container">
+        <div class="case-study-header">
+          {frontmatter.categories?.length > 0 && (
+            <div class="case-categories">
+              {frontmatter.categories.map((cat: string) => (
+                <span class="label case-cat">{cat}</span>
+              ))}
+            </div>
+          )}
+          <h1>{frontmatter.title}</h1>
+        </div>
+
+        {frontmatter.featuredImage && (
+          <div class="case-hero-image">
+            <img
+              src={frontmatter.featuredImage}
+              alt={frontmatter.featuredImageAlt || frontmatter.title}
+            />
+          </div>
+        )}
+
+        <div class="case-content">
+          <slot />
+        </div>
+
+        {frontmatter.slideshowImages?.length > 0 && (
+          <Slideshow images={frontmatter.slideshowImages} alt={frontmatter.title} />
+        )}
+
+        <div class="case-back">
+          <a href="/work" class="work-link berry">&larr; All Case Studies</a>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <a href="/" class="logo" aria-label="MKTNG.">
+            <img src="/mktng-logo.png" alt="MKTNG." class="logo-img" />
+          </a>
+          <span class="footer-copy">&copy; 2026 MKTNG. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        const nav = document.getElementById('navbar');
+        if (!nav) return;
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('is-scrolled', window.scrollY > 40);
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+  .case-study {
+    padding: 9rem 0 4rem;
+    background: var(--white);
+  }
+
+  .case-study-header {
+    max-width: 720px;
+    margin-bottom: 2.5rem;
+  }
+
+  .case-study-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+
+  .case-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .case-cat {
+    color: var(--berry);
+  }
+
+  .case-hero-image {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
+  .case-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .case-content {
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .case-content :global(h2) {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .case-content :global(h3) {
+    font-size: 1.35rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .case-content :global(p) {
+    margin-bottom: 1.25rem;
+    opacity: 0.88;
+  }
+
+  .case-content :global(ul),
+  .case-content :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .case-content :global(li) {
+    margin-bottom: 0.5rem;
+    opacity: 0.88;
+  }
+
+  .case-content :global(a) {
+    color: var(--berry);
+    border-bottom: 1px solid transparent;
+  }
+
+  .case-content :global(a:hover) {
+    border-bottom-color: var(--berry);
+  }
+
+  .case-back {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+  }
+</style>
