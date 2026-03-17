@@ -1,0 +1,220 @@
+---
+import '../styles/global.css';
+
+const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{frontmatter.seoTitle || frontmatter.title} | MKTNG.</title>
+    {frontmatter.seoDescription && (
+      <meta name="description" content={frontmatter.seoDescription} />
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="container nav-inner">
+        <a href="/" class="logo" aria-label="MKTNG.">
+          <img src="/mktng-logo.png" alt="MKTNG." class="logo-img" />
+        </a>
+        <nav class="nav-links">
+          <a href="/#work">Work</a>
+          <a href="/#how-we-work">How We Work</a>
+          <a href="/#about">About</a>
+          <a href="/blog">Blog</a>
+          <a href="/goldendoodle" class="gd-link">GoldenDoodle</a>
+          <a href="/contact" class="btn btn-berry">Let's Talk</a>
+        </nav>
+      </div>
+    </header>
+
+    <article class="blog-post">
+      <div class="container">
+        <div class="blog-post-header">
+          {frontmatter.categories?.length > 0 && (
+            <div class="blog-categories">
+              {frontmatter.categories.map((cat: string) => (
+                <span class="label blog-cat">{cat}</span>
+              ))}
+            </div>
+          )}
+          <h1>{frontmatter.title}</h1>
+          <time datetime={frontmatter.date}>{formattedDate}</time>
+        </div>
+
+        {frontmatter.featuredImage && (
+          <div class="blog-featured-image">
+            <img
+              src={frontmatter.featuredImage}
+              alt={frontmatter.featuredImageAlt || frontmatter.title}
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <div class="blog-content">
+          <slot />
+        </div>
+
+        <div class="blog-back">
+          <a href="/blog" class="work-link berry">&larr; All Posts</a>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <a href="/" class="logo" aria-label="MKTNG.">
+            <img src="/mktng-logo.png" alt="MKTNG." class="logo-img" />
+          </a>
+          <span class="footer-copy">&copy; 2026 MKTNG. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        const nav = document.getElementById('navbar');
+        if (!nav) return;
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('is-scrolled', window.scrollY > 40);
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+  .blog-post {
+    padding: 9rem 0 4rem;
+    background: var(--white);
+  }
+
+  .blog-post-header {
+    max-width: 720px;
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-post-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+
+  .blog-post-header time {
+    font-size: 0.85rem;
+    opacity: 0.55;
+  }
+
+  .blog-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .blog-cat {
+    color: var(--berry);
+  }
+
+  .blog-featured-image {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
+  .blog-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .blog-content {
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .blog-content :global(h2) {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .blog-content :global(h3) {
+    font-size: 1.35rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1.25rem;
+    opacity: 0.88;
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 0.5rem;
+    opacity: 0.88;
+  }
+
+  .blog-content :global(blockquote) {
+    border-left: 3px solid var(--berry);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .blog-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-light);
+  }
+
+  .blog-content :global(a) {
+    color: var(--berry);
+    border-bottom: 1px solid transparent;
+  }
+
+  .blog-content :global(a:hover) {
+    border-bottom-color: var(--berry);
+  }
+
+  .blog-content :global(iframe) {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-light);
+  }
+
+  .blog-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 2.5rem 0;
+  }
+
+  .blog-back {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+  }
+</style>
