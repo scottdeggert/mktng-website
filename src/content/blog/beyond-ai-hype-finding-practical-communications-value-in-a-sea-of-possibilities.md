@@ -4,7 +4,7 @@ date: 2025-04-03
 excerpt: "In the midst of AI&#8217;s meteoric rise, there&#8217;s a conversation not happening nearly enough outside tech conferences and industry echo chambers. While Silicon Valley debates the philosophical implications of frontier models, most professionals are asking much more practical questions: &#82..."
 categories:
   - AI
-featuredImage: "https://mktng.co/wp-content/uploads/2025/04/Beyond-AI-Hype-Finding-Practical-Communications-Value-in-a-Sea-of-Possibilities.png"
+featuredImage: "/images/blog/Beyond-AI-Hype-Finding-Practical-Communications-Value.png"
 seoTitle: "Beyond AI Hype: Finding Practical Communications Value in a Sea of Possibilities - MKTNG"
 seoDescription: "Cut through the AI hype. Discover practical AI in Communications applications to boost efficiency and creativity. Learn how to address pain points, build focused toolkits, and use AI as a collaborative partner for impactful results."
 wpId: 9048

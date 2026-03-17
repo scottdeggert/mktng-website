@@ -8,7 +8,7 @@ categories:
   - Branding
   - Culture
   - Podcasts
-featuredImage: "https://mktng.co/wp-content/uploads/2025/12/MKTNG-Blog-Post-Images.png"
+featuredImage: "/images/blog/MKTNG-Blog-Post-Images-2025-12.png"
 seoTitle: "MKTNG 10th Anniversary Special: The Creative Evolution – An Interview with Josh McCowen - MKTNG"
 seoDescription: "Scott Eggert and Josh McCowen discuss building lasting brands, the print-to-digital shift, AI's role in design, and why expert strategy beats \"average\" AI content."
 wpId: 9277

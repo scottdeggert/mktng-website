@@ -4,7 +4,7 @@ date: 2025-04-03
 excerpt: "For decades, the press release reigned supreme in the communications kingdom—a formal declaration to the world that something important was happening. Write it up, blast it out on a newswire, and wait for journalists to come calling. But is this trusty tool still relevant in today&#8217;s overcro..."
 categories:
   - Public Relations
-featuredImage: "https://mktng.co/wp-content/uploads/2025/04/The-Press-Release-Paradox-Evolution-Not-Extinction.png"
+featuredImage: "/images/blog/The-Press-Release-Paradox-Evolution-Not-Extinction.png"
 seoTitle: "The Press Release Paradox: Evolution, Not Extinction - MKTNG"
 seoDescription: "Press Releases have evolved. Learn how to combine them with direct-to-audience content, social media, and relationship-based pitching for effective communication."
 wpId: 9037

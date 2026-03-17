@@ -6,7 +6,7 @@ categories:
   - 10th Anniversary
   - Culture
   - News
-featuredImage: "https://mktng.co/wp-content/uploads/2025/03/Ten-Years-of-Spark-The-MKTNG-Origin-Story.png"
+featuredImage: "/images/blog/Ten-Years-of-Spark-The-MKTNG-Origin-Story.png"
 featuredImageAlt: Ten Years of Spark The MKTNG Origin Story
 seoTitle: "Ten Years of Spark: The MKTNG Origin Story - MKTNG"
 seoDescription: "This year, MKTNG celebrates a decade of crafting compelling marketing strategies and delivering impactful results for our clients. We sat down with our founder, Scott Eggert, to delve into how MKTNG was born."
