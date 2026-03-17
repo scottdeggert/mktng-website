@@ -6,7 +6,7 @@ categories:
   - 10th Anniversary
   - Culture
   - Podcasts
-featuredImage: "https://mktng.co/wp-content/uploads/2025/05/An-Interview-with-Our-First-Employee-Angela-Ficarelli-2.png"
+featuredImage: "/images/blog/An-Interview-with-Our-First-Employee-Angela-Ficarelli.png"
 seoTitle: "MKTNG 10th Anniversary Special: An Interview with Our First Employee, Angela Ficarelli! - MKTNG"
 seoDescription: "Join us as we celebrate MKTNG's 10th anniversary with a special interview featuring our very first employee, Angela Ficarelli!"
 wpId: 9057
