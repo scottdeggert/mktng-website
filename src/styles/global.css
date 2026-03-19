@@ -140,7 +140,7 @@ header.is-scrolled {
 
 .logo-img {
   display: block;
-  height: 64px;
+  height: 56px;
 }
 
 .nav-links {
@@ -175,7 +175,7 @@ header.is-scrolled {
 
 .estb {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--cyan);
@@ -201,7 +201,13 @@ header.is-scrolled {
 }
 
 .hero-cta {
-  margin-bottom: 4rem;
+  margin-bottom: 0;
+}
+
+/* ─── SECTORS (bento grid) ─────────────────────────────────────── */
+.sectors {
+  background: var(--white);
+  padding: 4rem 0;
 }
 
 .bento-grid {
@@ -319,6 +325,7 @@ header.is-scrolled {
 
 .section-header.wide h2 {
   max-width: 720px;
+  height: 35px;
 }
 
 .pillars-grid {
@@ -334,10 +341,17 @@ header.is-scrolled {
 }
 
 .pillar-num {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
   color: rgba(18, 26, 37, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-bottom: 0.75rem;
+}
+
+.pillar-num svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
 }
 
 .pillar-card h3 {
@@ -367,7 +381,7 @@ header.is-scrolled {
 
 .case-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   margin-top: 3rem;
 }
@@ -392,6 +406,10 @@ header.is-scrolled {
 
 .case-card .label.berry {
   color: var(--berry);
+}
+
+.case-card .label.gd {
+  color: var(--gd);
 }
 
 .case-card h3 {
@@ -423,6 +441,10 @@ header.is-scrolled {
 
 .case-link.berry {
   color: var(--berry);
+}
+
+.case-link.gd {
+  color: var(--gd);
 }
 
 /* ─── 5. LOGO STRIP ──────────────────────────────────────────── */
@@ -495,6 +517,17 @@ header.is-scrolled {
 .verticals {
   background: var(--white);
   padding: 5rem 0;
+}
+
+.verticals .section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.verticals-intro {
+  font-size: 0.98rem;
+  opacity: 0.78;
+  max-width: 720px;
 }
 
 .verticals-grid {
@@ -699,11 +732,14 @@ header.is-scrolled {
 }
 
 .gd-panel-name {
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--gd);
+  display: flex;
+  align-items: center;
   margin-bottom: 1.75rem;
+}
+
+.gd-panel-name img {
+  display: block;
+  height: 68px;
 }
 
 .gd-positioning {
